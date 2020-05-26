@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "kde-messages.c"
-#include "cli-messages.c"
+#include "files/process.c"
+#include "messages/kde.c"
+#include "messages/cli.c"
 
 int startPomodoroRound() {
     showCLIStartMessage();
@@ -17,10 +18,14 @@ int main(int argc, char *args[]) {
         startPomodoroRound();
     }
 
+    if (strcmp(args[1], "list") == 0 ||
+        strcmp(args[1], "check") == 0) {
+        // checkPomodoroRound();
+    }
+
     if (strcmp(args[1], "stop") == 0) {
         // stopPomodoroRound();
     }
 
-    printf("%s\n", "não estou morto!");
     return 0;
 }

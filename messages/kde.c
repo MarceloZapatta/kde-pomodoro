@@ -10,10 +10,11 @@ int showKDEStartMessage() {
                 "Iniciar um ciclo pomodoro: 25 minutos", 
                 NULL
             );
+
         } else {
-            printf("%s\n", "Sim, estou exceutando o sleep...");
+            writeProcessFileLock();
             
-            sleep(10);
+            sleep(30);
 
             execl(
                 "/usr/bin/kdialog", 
